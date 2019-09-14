@@ -38,6 +38,7 @@ const URLS = [
         let poster = $('div[class="poster"] > a > img').attr('src');
         let totalRatings = $('div[class="imdbRating"] > a').text();
         let releaseDate = $('a[title="See more release dates"]').text().trim();
+        let popularity = $('#title-overview-widget > div.plot_summary_wrapper > div.titleReviewBar > div:nth-child(5) > div.titleReviewBarSubItem > div:nth-child(2) > span').text().trim();
         let genres = [];
 
         $('div[class="title_wrapper"] a[href^="/search/"]').each((i, elm) => {
