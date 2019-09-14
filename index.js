@@ -24,8 +24,22 @@ const URL = 'https://www.imdb.com/title/tt0319061/';
 
     let $ = cheerio.load(response);
 
-    let title = $('div[class="title_wrapper"] > h1').text();
+    let title = $('div[class="title_wrapper"] > h1').text().trim();
     let rating = $('span[itemprop="ratingValue"]').text();
+    let poster = $('div[class="poster"] > a > img').attr('src');
+    let totalRatings = $('div[class="imdbRating"] > a').text();
+    let releaseDate = $('a[title="See more release dates"]').text().trim();
+    let genres = [];
+    $('div[class="title_wrapper"] a[href^="/search/"]').each((i, elm) => {
+        let genre = $(elm).text();
+        genres.push(genre);
+    });
 
-    console.log(title, rating);
+
+    console.log(`title: ${title}`);
+    console.log(`rating: ${rating}`);
+    console.log(`poster: ${poster}`);
+    console.log(`totalRatings: ${totalRatings}`);
+    console.log(`releaseDate: ${releaseDate}`);
+    console.log(`genres: ${genres}`);
 })()
