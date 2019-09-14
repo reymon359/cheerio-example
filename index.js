@@ -1,5 +1,7 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
+const fs = require('fs');
+
 
 const URLS = [
     'https://www.imdb.com/title/tt0319061/',
@@ -51,11 +53,10 @@ const URLS = [
             releaseDate,
             genres
         })
-
-
-
     }
 
+    fs.writeFileSync('./data.json', JSON.stringify(moviesData), 'utf-8');
+
     console.log(moviesData);
-    debugger;
+
 })()
