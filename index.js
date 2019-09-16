@@ -94,14 +94,7 @@ const URLS = [{
                 console.log(`${movie.id} has an error on download. ${error}`);
             });
 
-
-
     }
-
-
-
-
-
 
     /* To save the data as Json or Csv
     const fields = ['title', 'rating'];
@@ -111,7 +104,5 @@ const URLS = [{
 
     // fs.writeFileSync('./data.json', JSON.stringify(moviesData), 'utf-8');
     fs.writeFileSync('./data.csv', csv, 'utf-8');*/
-
-
 
 })()
